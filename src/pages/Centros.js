@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import centros from "assets/fondos/1.jpeg";
 import { Col, Jumbotron, Row } from "reactstrap";
 import { imgAltoRend, imgFutsal, imgPersonal } from "assets/centros";
 
 const InnerPage = styled.section`
-  background-image: url(${centros});
+  background-image: url(${(props) => props.fondo});
   background-repeat: repeat-y;
   background-size: cover;
   min-height: calc(100vh);
@@ -13,9 +12,9 @@ const InnerPage = styled.section`
   padding: 7rem 0 2rem 0;
 `;
 
-function Centros() {
+function Centros({ fondo }) {
   return (
-    <InnerPage>
+    <InnerPage fondo={fondo}>
       <Jumbotron>
         <h2 className="titulo text-left">Centros de Entrenamiento</h2>
         <ul>

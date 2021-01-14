@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import centros from "assets/fondos/3.jfif";
-import { Card, CardImg, Col, Jumbotron, Row } from "reactstrap";
+import { Jumbotron } from "reactstrap";
 import j1a from "assets/jugadores/j1-a.jfif";
 import j1b from "assets/jugadores/j1-b.jfif";
 import j2a from "assets/jugadores/j2-a.jfif";
@@ -29,7 +28,7 @@ const imgs = [
 ];
 
 const InnerPage = styled.section`
-  background-image: url(${centros});
+  background-image: url(${(props) => props.fondo});
   background-repeat: repeat-y;
   background-size: cover;
   min-height: calc(100vh);
@@ -37,9 +36,9 @@ const InnerPage = styled.section`
   padding: 7rem 0 2rem 0;
 `;
 
-function Jugadores() {
+function Jugadores({ fondo }) {
   return (
-    <InnerPage>
+    <InnerPage fondo={fondo}>
       <Jumbotron>
         <h2 className="titulo text-right">Jugadores Representados</h2>
 

@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import centros from "assets/fondos/4.jpeg";
 import { NavLink } from "react-router-dom";
 
 const InnerPage = styled.section`
-  background-image: url(${centros});
+  background-image: url(${(props) => props.fondo});
   background-repeat: repeat-y;
   background-size: cover;
   min-height: calc(100vh);
@@ -48,9 +47,9 @@ const BotonHero = styled(NavLink)`
   }
 `;
 
-function Home() {
+function Home({ fondo }) {
   return (
-    <InnerPage>
+    <InnerPage fondo={fondo}>
       <Hero>
         <H3> Agencia de Integración Deportiva</H3>
         <BotonHero to="/nosotros">Conocenos</BotonHero>

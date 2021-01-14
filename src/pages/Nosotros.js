@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import centros from "assets/fondos/5.jpeg";
 import { Jumbotron } from "reactstrap";
 
 const InnerPage = styled.section`
-  background-image: url(${centros});
+  background-image: url(${(props) => props.fondo});
   background-repeat: repeat-y;
   background-size: cover;
   min-height: calc(100vh);
@@ -12,9 +11,9 @@ const InnerPage = styled.section`
   padding: 7rem 0 2rem 0;
 `;
 
-function Nosotros() {
+function Nosotros({ fondo }) {
   return (
-    <InnerPage>
+    <InnerPage fondo={fondo}>
       <Jumbotron>
         <h2 className="titulo text-left">Que hacemos</h2>
         <p>
