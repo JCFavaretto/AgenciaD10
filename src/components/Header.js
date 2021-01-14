@@ -75,7 +75,10 @@ function Header() {
     >
       <Link to="/" onClick={() => setIsOpen(false)}>
         <NavbarBrand>
-          <img src={logo} alt="D10" height="100px" />
+          <div className="logo">
+            <img src={logo} alt="D10" height="100px" />
+            <span>Asociación Civil</span>
+          </div>
         </NavbarBrand>
       </Link>
       <NavbarToggler onClick={toggle} />

@@ -55,3 +55,19 @@ a:hover {
   border-bottom: 1px solid var(--green);
   margin-bottom: 1rem;
 }
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+.logo span {
+  color: black;
+  font-weight: 700;
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: 0.3rem;
+}
