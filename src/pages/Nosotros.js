@@ -23,9 +23,9 @@ function Nosotros({ fondo }) {
           laboriosam, consectetur numquam!
         </p>
         <ul>
-          <li>Servicio 1</li>
-          <li>Servicio 2</li>
-          <li>Servicio 3</li>
+          <li>Conformación de equipo "Libres profesiinales"</li>
+          <li>Escuela Formativa y Recreativa</li>
+          <li>Deporte Adaptado</li>
         </ul>
         <h2 className="titulo text-right">Quienes somos</h2>
         <p className="text-right">Director: Dt. Martínez Olmedo Daniel </p>

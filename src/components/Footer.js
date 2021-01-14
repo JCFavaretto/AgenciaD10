@@ -13,7 +13,7 @@ function Footer() {
   return (
     <InnerFooter>
       <p className="text-left">
-        Copyright D10 - {new Date().getFullYear()}. Todos los derechos
+        D10 Asociación Civil- {new Date().getFullYear()}. Todos los derechos
         reservados.
       </p>
     </InnerFooter>

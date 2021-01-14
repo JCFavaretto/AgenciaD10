@@ -51,7 +51,7 @@ function Home({ fondo }) {
   return (
     <InnerPage fondo={fondo}>
       <Hero>
-        <H3> Agencia de Integración Deportiva</H3>
+        <H3>Integración Deportiva</H3>
         <BotonHero to="/nosotros">Conocenos</BotonHero>
       </Hero>
     </InnerPage>
