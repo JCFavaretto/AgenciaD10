@@ -4,77 +4,92 @@ import { Col, Jumbotron, Row } from "reactstrap";
 import { imgAltoRend, imgFutsal, imgPersonal } from "assets/centros";
 
 const InnerPage = styled.section`
-  background-image: url(${(props) => props.fondo});
-  background-repeat: repeat-y;
-  background-size: cover;
   min-height: calc(100vh);
-  background-position: top;
-  padding: 7rem 0 2rem 0;
+  padding: 6rem 0 2rem 0;
 `;
 
-function Centros({ fondo }) {
+function Centros() {
   return (
-    <InnerPage fondo={fondo}>
+    <InnerPage>
       <Jumbotron>
-        <h2 className="titulo text-left">Centros de Entrenamiento</h2>
-        <ul>
-          <li>
-            <h4 className="sub-titulo text-right">
-              Entrenamiento Personalizado
-            </h4>
-            <Row xs="1" md="2" lg="3">
-              {imgPersonal.map((img) => {
-                return (
-                  <Col key={img.alt}>
-                    <img
-                      className="img-thumbnail"
-                      src={img.src}
-                      alt={img.alt}
-                      height="150px"
-                      width="200px"
-                    />
-                  </Col>
-                );
-              })}
-            </Row>
-          </li>
-          <li>
-            <h4 className="sub-titulo text-center">Futsal</h4>
-            <Row xs="1" md="2" lg="3">
-              {imgFutsal.map((img) => {
-                return (
-                  <Col key={img.alt}>
-                    <img
-                      className="img-thumbnail"
-                      src={img.src}
-                      alt={img.alt}
-                      height="150px"
-                      width="200px"
-                    />
-                  </Col>
-                );
-              })}
-            </Row>
-          </li>
-          <li>
-            <h4 className="sub-titulo text-left">Alto Rendimiento</h4>
-            <Row xs="1" md="2" lg="3">
-              {imgAltoRend.map((img) => {
-                return (
-                  <Col key={img.alt}>
-                    <img
-                      className="img-thumbnail"
-                      src={img.src}
-                      alt={img.alt}
-                      height="150px"
-                      width="200px"
-                    />
-                  </Col>
-                );
-              })}
-            </Row>
-          </li>
-        </ul>
+        <h4 className="sub-titulo text-center">Entrenamiento Personalizado</h4>
+        <Row xs="1" md="2" lg="2" xl="3">
+          {imgPersonal.map((img) => {
+            return (
+              <Col key={img.alt}>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        height="250px"
+                        width="300px"
+                      />
+                    </div>
+                    <div class="flip-card-back">
+                      <h4>{img.name} </h4>
+                      <p>Dirección: {img.direccion} </p>
+                      <p>Horarios: {img.horarios} </p>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+        <h4 className="sub-titulo text-center">Cancha de Futsal</h4>
+        <Row xs="1" md="2" lg="2" xl="3">
+          {imgFutsal.map((img) => {
+            return (
+              <Col key={img.alt}>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        height="250px"
+                        width="300px"
+                      />
+                    </div>
+                    <div class="flip-card-back">
+                      <h4>{img.name} </h4>
+                      <p>Dirección: {img.direccion} </p>
+                      <p>Horarios: {img.horarios} </p>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+        <h4 className="sub-titulo text-center">Cancha de Alto Rendimiento</h4>
+        <Row xs="1" md="2" lg="2" xl="3">
+          {imgAltoRend.map((img) => {
+            return (
+              <Col key={img.alt}>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        height="250px"
+                        width="300px"
+                      />
+                    </div>
+                    <div class="flip-card-back">
+                      <h4>{img.name} </h4>
+                      <p>Dirección: {img.direccion} </p>
+                      <p>Horarios: {img.horarios} </p>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </Jumbotron>
     </InnerPage>
   );

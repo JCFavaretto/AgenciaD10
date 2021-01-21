@@ -6,27 +6,28 @@ import {
   NavbarToggler,
   NavItem,
   Collapse,
+  Container,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 import logo from "assets/logo.png";
 import logo2 from "assets/jyg.png";
+import NavMenu from "components/NavMenu";
 
 const InnerHeader = styled(Navbar)`
   background-color: #607d8b00;
-  transition: 0.3s all ease-in;
+  transition: 0.5s all ease-in;
   justify-content: space-between;
-  padding: 0.3rem 1rem;
+  padding: 0 1rem;
+  max-height: 100px;
 
   ${(props) =>
     props.primary === "true" &&
     css`
-      background-color: #4b9a37f0;
-    `}
-
-  @media (min-width: 768px) {
-    height: 100px;
-  }
+      max-height: 50px;
+      background-color: #4b9a37ff;
+      transition: 0.3s all ease-out;
+    `};
 `;
 
 const Navigation = styled(Nav)`
@@ -38,11 +39,15 @@ const Navigation = styled(Nav)`
   text-align: center;
   font-weight: 700;
   padding: 1rem 0;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Link = styled(NavLink)`
   color: var(--white);
-  padding: 1rem 0 0 0;
+  padding: 0 0 0.6rem 0;
   text-align: center;
   font-size: 1rem;
 
@@ -57,7 +62,7 @@ function Header() {
   const toggle = () => setIsOpen(!isOpen);
 
   const changeBackground = () => {
-    if (window.scrollY >= 30) {
+    if (window.scrollY >= 50) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -68,61 +73,70 @@ function Header() {
 
   return (
     <InnerHeader
-      primary={navbar || isOpen ? "true" : undefined}
+      primary={navbar ? "true" : undefined}
       dark
       expand="md"
       fixed="top"
     >
-      <Link to="/" onClick={() => setIsOpen(false)}>
-        <NavbarBrand>
-          <div className="logo">
-            <img src={logo} alt="D10" height="100px" />
-            <span>Asociación Civil</span>
-          </div>
-        </NavbarBrand>
-      </Link>
-      <NavbarToggler onClick={toggle} />
+      <Container>
+        <Link to="/" style={{ padding: "0" }} onClick={() => setIsOpen(false)}>
+          <NavbarBrand style={{ padding: "0" }}>
+            <div className="logo">
+              <img src={logo} alt="D10" height={navbar ? "50px" : "100px"} />
+              <span className={navbar ? "small" : ""}>Asociación Civil</span>
+            </div>
+          </NavbarBrand>
+        </Link>
+        <NavbarToggler onClick={toggle} />
 
-      <Collapse isOpen={isOpen} navbar>
-        <Navigation navbar tabs>
-          <NavItem>
-            <Link
-              onClick={() => setIsOpen(false)}
-              to="/nosotros"
-              activeStyle={{ borderTop: "2px solid var(--white)" }}
-            >
-              Nosotros
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link
-              onClick={() => setIsOpen(false)}
-              to="/jugadores"
-              activeStyle={{ borderTop: "2px solid var(--white)" }}
-            >
-              Jugadores
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link
-              onClick={() => setIsOpen(false)}
-              to="/centros"
-              activeStyle={{ borderTop: "2px solid var(--white)" }}
-            >
-              Centros{" "}
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link
-              onClick={() => setIsOpen(false)}
-              to="/jyg"
-              activeStyle={{ borderTop: "2px solid var(--white)" }}
-            >
-              <img src={logo2} alt="JyG" width="70px" />{" "}
-            </Link>
-          </NavItem>
-        </Navigation>
-      </Collapse>
+        <Collapse isOpen={isOpen} navbar>
+          <Navigation navbar>
+            <NavItem>
+              <Link
+                onClick={() => setIsOpen(false)}
+                to="/nosotros"
+                activeStyle={{ borderBottom: "2px solid var(--white)" }}
+              >
+                Nosotros
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                onClick={() => setIsOpen(false)}
+                to="/jugadores"
+                activeStyle={{ borderBottom: "2px solid var(--white)" }}
+              >
+                Jugadores
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                onClick={() => setIsOpen(false)}
+                to="/centros"
+                activeStyle={{ borderBottom: "2px solid var(--white)" }}
+              >
+                Centros de Entrenamiento{" "}
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                onClick={() => setIsOpen(false)}
+                to="/jyg"
+                activeStyle={{ borderBottom: "2px solid var(--white)" }}
+                style={{ paddingTop: "1rem" }}
+              >
+                <img src={logo2} alt="JyG" width="70px" />{" "}
+              </Link>
+            </NavItem>
+          </Navigation>
+        </Collapse>
+        <NavMenu
+          logo={logo}
+          logo2={logo2}
+          active={isOpen ? "true" : undefined}
+          toggle={toggle}
+        />
+      </Container>
     </InnerHeader>
   );
 }

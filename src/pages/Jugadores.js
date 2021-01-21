@@ -28,19 +28,15 @@ const imgs = [
 ];
 
 const InnerPage = styled.section`
-  background-image: url(${(props) => props.fondo});
-  background-repeat: repeat-y;
-  background-size: cover;
   min-height: calc(100vh);
-  background-position: top;
-  padding: 7rem 0 2rem 0;
+  padding: 6rem 0 2rem 0;
 `;
 
-function Jugadores({ fondo }) {
+function Jugadores() {
   return (
-    <InnerPage fondo={fondo}>
+    <InnerPage>
       <Jumbotron>
-        <h2 className="titulo text-right">Jugadores Representados</h2>
+        <h3 className="titulo text-center">Jugadores Representados</h3>
 
         <ImageGallery items={imgs} />
       </Jumbotron>

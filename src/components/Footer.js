@@ -12,7 +12,7 @@ const InnerFooter = styled.section`
 function Footer() {
   return (
     <InnerFooter>
-      <p className="text-left">
+      <p className="text-left" style={{ fontSize: "0.6rem" }}>
         D10 Asociación Civil- {new Date().getFullYear()}. Todos los derechos
         reservados.
       </p>
