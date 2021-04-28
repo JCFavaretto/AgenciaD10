@@ -11,7 +11,7 @@ function Cursos() {
   return (
     <InnerPage>
       <Jumbotron>
-        <h1>Cursos</h1>
+        <h3 className="titulo text-center">Cursos</h3>
       </Jumbotron>
     </InnerPage>
   );

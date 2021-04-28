@@ -71,7 +71,6 @@ function Header() {
       setNavbar(false);
     }
   };
-
   window.addEventListener("scroll", changeBackground);
 
   return (
@@ -84,7 +83,7 @@ function Header() {
       <Container fluid="md">
         <Link to="/" style={{ padding: "0" }} onClick={() => setIsOpen(false)}>
           <NavbarBrand>
-            <Logo />
+            <Logo navbar={navbar} />
           </NavbarBrand>
         </Link>
         <NavbarToggler onClick={toggle} />

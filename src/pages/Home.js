@@ -2,42 +2,50 @@ import Boton from "components/Boton";
 import React from "react";
 import styled from "styled-components";
 
-const InnerPage = styled.section`
-  min-height: calc(100vh);
-  padding: 6rem 0 2rem 0;
-`;
+import { faComment } from "@fortawesome/free-solid-svg-icons";
+import BannerHome from "components/BannerHome";
 
 const Hero = styled.section`
-  max-width: 100%;
-  height: 400px;
+  max-width: 80%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  padding-bottom: 8rem;
   margin: 0 auto;
+  background-image: url("assets/fondos/4.jpeg");
+  background-size: cover;
+  background-position: right;
 `;
 
-const H3 = styled.h1`
-  color: white;
-  font-weight: 700;
+const HeroText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h1 {
+    color: white;
+    font-weight: 700;
+  }
 `;
 
 function Home() {
   return (
-    <InnerPage>
+    <>
       <Hero>
-        <H3>
-          <div style={{}}> De Diez</div>
-          <div> Integración Deportiva</div>
-        </H3>
+        <HeroText>
+          <h1> De Diez</h1>
+          <h1> Integración Deportiva</h1>
+        </HeroText>
         <Boton nav path="/nosotros" texto="Conocenos" />
       </Hero>
-    </InnerPage>
+      <BannerHome
+        icon={faComment}
+        title="REPRESENTACIÓN PROFESIONAL"
+        text=" Estamos especializados en la representación de deportistas
+          profesionales."
+      />
+    </>
   );
 }
 

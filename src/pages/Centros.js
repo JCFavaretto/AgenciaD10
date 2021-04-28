@@ -13,6 +13,9 @@ function Centros() {
   return (
     <InnerPage>
       <Jumbotron>
+        <h3 className="titulo text-center" style={{ marginBottom: "2rem" }}>
+          Nuestros centros de entrenamiento
+        </h3>
         <CollapseItems
           items={imgAltoRend}
           title="Centros de Alto Rendimiento"

@@ -7,11 +7,19 @@ const CollapseTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--green);
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-top: 1rem;
+  }
 `;
 
 const Icon = styled.p`
   font-size: 2rem;
   font-weight: 500;
+  margin: 0;
 `;
 
 function CollapseItems({ items, title, open = false }) {
@@ -19,12 +27,11 @@ function CollapseItems({ items, title, open = false }) {
   return (
     <>
       <CollapseTitle
-        className="titulo"
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
       >
-        <h3 className="text-center">{title}</h3>
+        <h3>{title}</h3>
         <Icon>{isOpen ? "-" : "+"}</Icon>
       </CollapseTitle>
       <Row xs="1" md="2" lg="2" xl="3">

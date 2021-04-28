@@ -5,7 +5,11 @@ function FlipCard({ img }) {
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src={img.src} alt={img.alt} height="250px" width="300px" />
+          <img
+            src={img.src}
+            alt={img.alt}
+            style={{ width: "100%", objectFit: "contain" }}
+          />
         </div>
         <div class="flip-card-back">
           <h4>{img.name} </h4>

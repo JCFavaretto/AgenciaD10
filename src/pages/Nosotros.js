@@ -11,7 +11,7 @@ function Nosotros() {
   return (
     <InnerPage>
       <Jumbotron>
-        <h3 className="titulo text-left">
+        <h3 className="titulo text-center">
           ¿Qué es D10 - Integración deportiva?
         </h3>
         <p>
@@ -21,7 +21,7 @@ function Nosotros() {
           deportivos ubicados estratégicamente. También ofrecemos Deporte
           Adaptado para personas con discapacidades.
         </p>
-        <p className="titulo">Cualés son nuestros Objetivos</p>
+        <p className="sub-titulo">Cualés son nuestros Objetivos</p>
         <ul style={{ paddingLeft: "2rem" }}>
           <li style={{ listStyleType: "square" }}>
             Crear Valores:
@@ -44,7 +44,7 @@ function Nosotros() {
             profesionales.
           </li>
         </ul>
-        <p className="titulo">Historia de D10</p>
+        <p className="sub-titulo">Historia de D10</p>
         <p>
           Inicia en el sueño de un jugador apasionado por el Fútbol, donde su
           objetivo es transmitir valores y esa misma pasión a otros jugadores,
@@ -52,7 +52,7 @@ function Nosotros() {
           esta misma razón se crea D10 integración deportiva, un lugar para
           acompañar a todas las personas a lograr sus objetivos propuestos.
         </p>
-        <p className="titulo">Equipo de trabajo</p>
+        <p className="sub-titulo">Equipo de trabajo</p>
         <ul style={{ paddingLeft: "2rem" }}>
           <li style={{ listStyleType: "square" }}>
             <p>Director: DT. Martínez Olmedo Daniel</p>
