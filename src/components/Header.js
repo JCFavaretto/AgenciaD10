@@ -3,17 +3,18 @@ import {
   Nav,
   Navbar,
   NavbarBrand,
-  NavbarToggler,
   NavItem,
   Collapse,
   Container,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
-import logo from "assets/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 import logo2 from "assets/jyg.png";
 import NavMenu from "components/NavMenu";
-import Logo from "./Logo";
+import Logo from "components/Logo";
 
 const InnerHeader = styled(Navbar)`
   background-color: #607d8b00;
@@ -28,7 +29,7 @@ const InnerHeader = styled(Navbar)`
     css`
       max-height: 50px;
       padding: 0 3rem 0 2rem;
-      background-color: #4b9a37ff;
+      background-color: white; /*#4b9a37ff;*/
       transition: 0.3s all ease-out;
     `};
 `;
@@ -56,6 +57,32 @@ const Link = styled(NavLink)`
 
   &:hover {
     color: var(--dark);
+  }
+
+  ${(props) =>
+    props.primary === "true" &&
+    css`
+      color: #4b9a37ff;
+    `};
+`;
+
+const Toggler = styled.div`
+  font-size: 1.5rem;
+  color: black;
+  margin-right: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  ${(props) =>
+    props.primary === "true" &&
+    css`
+      color: #4b9a37ff;
+    `};
+
+  @media (min-width: 991px) {
+    display: none;
   }
 `;
 
@@ -86,7 +113,9 @@ function Header() {
             <Logo navbar={navbar} />
           </NavbarBrand>
         </Link>
-        <NavbarToggler onClick={toggle} />
+        <Toggler onClick={toggle} primary={navbar ? "true" : undefined}>
+          <FontAwesomeIcon icon={faBars} />
+        </Toggler>
         <Collapse isOpen={isOpen} navbar>
           <Navigation navbar>
             <NavItem>
@@ -94,6 +123,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/nosotros"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
+                primary={navbar ? "true" : undefined}
               >
                 Nosotros
               </Link>
@@ -103,6 +133,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/jugadores"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
+                primary={navbar ? "true" : undefined}
               >
                 Jugadores
               </Link>
@@ -112,6 +143,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/centros"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
+                primary={navbar ? "true" : undefined}
               >
                 Centros de Entrenamiento
               </Link>
@@ -121,6 +153,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/cursos"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
+                primary={navbar ? "true" : undefined}
               >
                 Cursos
               </Link>
@@ -138,7 +171,6 @@ function Header() {
           </Navigation>
         </Collapse>
         <NavMenu
-          logo={logo}
           logo2={logo2}
           active={isOpen ? "true" : undefined}
           toggle={toggle}

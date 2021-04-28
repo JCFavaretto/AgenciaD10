@@ -6,7 +6,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Logo from "components/Logo";
 
 const InnerNavMenu = styled.div`
-  background-color: #4b9a37;
+  background-color: white;
   width: calc(100vw);
   height: 100vh;
   display: flex;
@@ -34,7 +34,8 @@ const InnerNavMenu = styled.div`
     li {
       margin-top: 1rem;
       a {
-        color: white;
+        font-weight: 700;
+        color: #4b9a37;
       }
     }
   }
@@ -98,7 +99,7 @@ const NavMenu = ({ logo2, active, toggle }) => {
         </li>
         <li>
           <FontAwesomeIcon
-            style={{ marginTop: "2rem", fontSize: "2rem", color: "white" }}
+            style={{ marginTop: "2rem", fontSize: "2rem", color: "#4b9a37" }}
             icon={faTimes}
             onClick={toggle}
           />

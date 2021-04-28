@@ -29,13 +29,13 @@ const LogoContainer = styled.div`
       ${(props) =>
         props.primary === "true" &&
         css`
-          color: white;
+          color: #4b9a37ff;
         `};
     }
   }
 `;
 
-function Logo({ navbar }) {
+function Logo({ navbar = true }) {
   return (
     <LogoContainer primary={navbar ? "true" : undefined}>
       <img src={logoSm} alt="D10" height="40px" />
