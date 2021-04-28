@@ -43,7 +43,7 @@ const Navigation = styled(Nav)`
   font-weight: 700;
   padding: 1rem 0;
 
-  @media (max-width: 767px) {
+  @media (max-width: 998px) {
     display: none;
   }
 `;
@@ -78,7 +78,7 @@ function Header() {
     <InnerHeader
       primary={navbar ? "true" : undefined}
       dark
-      expand="md"
+      expand="lg"
       fixed="top"
     >
       <Container fluid="md">
@@ -114,7 +114,7 @@ function Header() {
                 to="/centros"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
               >
-                Centros de Entrenamiento{" "}
+                Centros de Entrenamiento
               </Link>
             </NavItem>
             <NavItem>

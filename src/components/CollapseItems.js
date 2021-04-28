@@ -24,9 +24,8 @@ function CollapseItems({ items, title, open = false }) {
           setIsOpen((prev) => !prev);
         }}
       >
-        <div />
         <h3 className="text-center">{title}</h3>
-        <Icon>{isOpen ? "+" : "-"}</Icon>
+        <Icon>{isOpen ? "-" : "+"}</Icon>
       </CollapseTitle>
       <Row xs="1" md="2" lg="2" xl="3">
         {items.map((img) => {

@@ -39,23 +39,21 @@ const InnerNavMenu = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     left: -150%;
   }
 `;
 
-const NavMenu = ({ logo, logo2, active, toggle }) => {
+const NavMenu = ({ logo2, active, toggle }) => {
   return (
     <InnerNavMenu active={active} onClick={toggle}>
       <ul>
         <li>
-          {" "}
           <NavLink to="/">
             <Logo />
           </NavLink>
         </li>
         <li>
-          {" "}
           <NavLink
             to="/nosotros"
             activeStyle={{ borderBottom: "2px solid var(--white)" }}
@@ -64,7 +62,6 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
           </NavLink>
         </li>
         <li>
-          {" "}
           <NavLink
             to="/jugadores"
             activeStyle={{ borderBottom: "2px solid var(--white)" }}
@@ -73,7 +70,6 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
           </NavLink>
         </li>
         <li>
-          {" "}
           <NavLink
             to="/centros"
             activeStyle={{ borderBottom: "2px solid var(--white)" }}
@@ -82,7 +78,6 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
           </NavLink>
         </li>
         <li>
-          {" "}
           <NavLink
             to="/cursos"
             activeStyle={{ borderBottom: "2px solid var(--white)" }}
@@ -91,7 +86,6 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
           </NavLink>
         </li>
         <li>
-          {" "}
           <NavLink
             to="/jyg"
             activeStyle={{
@@ -103,7 +97,6 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
           </NavLink>
         </li>
         <li>
-          {" "}
           <FontAwesomeIcon
             style={{ marginTop: "2rem", fontSize: "2rem", color: "white" }}
             icon={faTimes}
