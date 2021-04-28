@@ -19,13 +19,15 @@ const InnerHeader = styled(Navbar)`
   background-color: #607d8b00;
   transition: 0.5s all ease-in;
   justify-content: space-between;
-  padding: 1rem;
+
+  padding: 1rem 3rem 1rem 2rem;
   max-height: 100px;
 
   ${(props) =>
     props.primary === "true" &&
     css`
       max-height: 50px;
+      padding: 0 3rem 0 2rem;
       background-color: #4b9a37ff;
       transition: 0.3s all ease-out;
     `};
@@ -86,7 +88,6 @@ function Header() {
           </NavbarBrand>
         </Link>
         <NavbarToggler onClick={toggle} />
-
         <Collapse isOpen={isOpen} navbar>
           <Navigation navbar>
             <NavItem>

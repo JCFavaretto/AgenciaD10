@@ -38,7 +38,7 @@ const BtnNav = styled(NavLink)`
 
 function Boton({ nav = false, path, texto }) {
   if (nav) {
-    return <BtnNav to={path}>Nav{texto}</BtnNav>;
+    return <BtnNav to={path}>{texto}</BtnNav>;
   } else {
     return (
       <BtnLink href={path} target="_blank" rel="noreferrer">
