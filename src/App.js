@@ -11,6 +11,7 @@ import Nosotros from "pages/Nosotros";
 import Jugadores from "pages/Jugadores";
 import Centros from "pages/Centros";
 import JugadasyGoles from "pages/JugadasyGoles";
+import Cursos from "pages/Cursos";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/jugadores">
             <Jugadores />
+          </Route>
+          <Route exact path="/cursos">
+            <Cursos />
           </Route>
           <Route exact path="/nosotros">
             <Nosotros />

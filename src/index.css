@@ -3,7 +3,6 @@ body {
   background-image: url("assets/fondos/4.jpeg");
   background-size: cover;
   background-position: right;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat', sans-serif;
@@ -63,24 +62,25 @@ a:hover {
 
 .logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   position: relative;
+  margin-left: 2rem;
 }
 
 .logo img {
   transition: 0.3s all ease-in;
 }
-
-
-.logo span {
+.logo-txt{
   color: black;
   font-weight: 700;
   font-size: 0.5rem;
-  position: absolute;
-  bottom: 0.3rem;
-
   transition: 0.3s all ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0.2rem;
+  padding-top: 1rem;
 }
 
 .small {

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import Logo from "components/Logo";
 
 const InnerNavMenu = styled.div`
   background-color: #4b9a37;
@@ -50,10 +51,7 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
         <li>
           {" "}
           <NavLink to="/">
-            <div className="logo">
-              <img src={logo} alt="D10" height="100px" />
-              <span>Asociación Civil</span>
-            </div>
+            <Logo />
           </NavLink>
         </li>
         <li>
@@ -81,6 +79,15 @@ const NavMenu = ({ logo, logo2, active, toggle }) => {
             activeStyle={{ borderBottom: "2px solid var(--white)" }}
           >
             Centros de Entrenamiento{" "}
+          </NavLink>
+        </li>
+        <li>
+          {" "}
+          <NavLink
+            to="/cursos"
+            activeStyle={{ borderBottom: "2px solid var(--white)" }}
+          >
+            Cursos
           </NavLink>
         </li>
         <li>

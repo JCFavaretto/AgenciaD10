@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Jumbotron } from "reactstrap";
 import imagen from "assets/jyg.png";
+import Boton from "components/Boton";
 
 const InnerPage = styled.section`
   min-height: calc(100vh);
@@ -41,21 +42,10 @@ function JugadasyGoles() {
           tus Jugadas y Goles.
         </p>
 
-        <a
-          href="https://play.google.com/store/apps/details?id=com.movilgate.futvideo&hl=es_419&gl=US"
-          target="_blank"
-          rel="noreferrer"
-          style={{
-            fontWeight: "700",
-            padding: "0.5rem 0.8rem",
-            backgroundColor: "#4b9a37",
-            color: "var(--light)",
-            textAlign: "center",
-            maxWidth: "9rem",
-          }}
-        >
-          Link a Play Store
-        </a>
+        <Boton
+          path="https://play.google.com/store/apps/details?id=com.movilgate.futvideo&hl=es_419&gl=US"
+          texto="Link a Play Store"
+        />
       </Jumbotron>
     </InnerPage>
   );

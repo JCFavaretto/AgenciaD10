@@ -16,10 +16,10 @@ function Nosotros() {
         </h3>
         <p>
           Es una Asociación civil destinada a la formación, entrenamiento y
-          perfeccionamiento deportivo del área Infantil, Juvenil y Libres.
-          Contamos con Centros de formación y entrenamientos deportivos ubicados
-          estratégicamente a lo largo y ancho del mundo. Tambien ofrecemos
-          Deporte Adaptado para personas con discapacidades.
+          perfeccionamiento deportivo del área Infantil, Juvenil, Libres y/o
+          selectivo. Contamos con Centros de formación y entrenamientos
+          deportivos ubicados estratégicamente. También ofrecemos Deporte
+          Adaptado para personas con discapacidades.
         </p>
         <p className="titulo">Cualés son nuestros Objetivos</p>
         <ul style={{ paddingLeft: "2rem" }}>
@@ -40,10 +40,8 @@ function Nosotros() {
             Lograr ser el mayor semillero Humano y Profesional
           </li>
           <li style={{ listStyleType: "square" }}>
-            Llegar completos como personas
-          </li>
-          <li style={{ listStyleType: "square" }}>
-            Deportivamente como profesional Plantillas
+            Llegar completos como personas y, deportivamente, como
+            profesionales.
           </li>
         </ul>
         <p className="titulo">Historia de D10</p>

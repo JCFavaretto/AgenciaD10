@@ -13,12 +13,13 @@ import styled, { css } from "styled-components";
 import logo from "assets/logo.png";
 import logo2 from "assets/jyg.png";
 import NavMenu from "components/NavMenu";
+import Logo from "./Logo";
 
 const InnerHeader = styled(Navbar)`
   background-color: #607d8b00;
   transition: 0.5s all ease-in;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem;
   max-height: 100px;
 
   ${(props) =>
@@ -78,13 +79,10 @@ function Header() {
       expand="md"
       fixed="top"
     >
-      <Container>
+      <Container fluid="md">
         <Link to="/" style={{ padding: "0" }} onClick={() => setIsOpen(false)}>
-          <NavbarBrand style={{ padding: "0" }}>
-            <div className="logo">
-              <img src={logo} alt="D10" height={navbar ? "50px" : "100px"} />
-              <span className={navbar ? "small" : ""}>Asociación Civil</span>
-            </div>
+          <NavbarBrand>
+            <Logo />
           </NavbarBrand>
         </Link>
         <NavbarToggler onClick={toggle} />
@@ -116,6 +114,15 @@ function Header() {
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
               >
                 Centros de Entrenamiento{" "}
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                onClick={() => setIsOpen(false)}
+                to="/cursos"
+                activeStyle={{ borderBottom: "2px solid var(--white)" }}
+              >
+                Cursos
               </Link>
             </NavItem>
             <NavItem>
