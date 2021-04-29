@@ -1,12 +1,5 @@
-import React, { useState } from "react";
-import {
-  Nav,
-  Navbar,
-  NavbarBrand,
-  NavItem,
-  Collapse,
-  Container,
-} from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Nav, Navbar, NavItem, Collapse, Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,18 +13,25 @@ const InnerHeader = styled(Navbar)`
   background-color: #607d8b00;
   transition: 0.5s all ease-in;
   justify-content: space-between;
-
+  transition: 0.3s all ease-out;
   padding: 1rem 3rem 1rem 2rem;
   max-height: 100px;
 
   ${(props) =>
-    props.primary === "true" &&
-    css`
-      max-height: 50px;
-      padding: 0 3rem 0 2rem;
-      background-color: white; /*#4b9a37ff;*/
-      transition: 0.3s all ease-out;
-    `};
+    props.styled === "primary"
+      ? css`
+          max-height: 50px;
+          padding: 0 3rem 0 2rem;
+          background-color: white; /*#4b9a37ff;*/
+          transition: 0.3s all ease-out;
+        `
+      : props.styled === "secondary" &&
+        css`
+          max-height: 50px;
+          padding: 0 3rem 0 2rem;
+          background-color: #4b9a37ff;
+          transition: 0.3s all ease-out;
+        `}
 `;
 
 const Navigation = styled(Nav)`
@@ -54,21 +54,22 @@ const Link = styled(NavLink)`
   padding: 0 0 0.6rem 0;
   text-align: center;
   font-size: 1rem;
+  transition: 0.3s all ease-out;
 
   &:hover {
     color: var(--dark);
   }
 
   ${(props) =>
-    props.primary === "true" &&
+    props.styled === "primary" &&
     css`
       color: #4b9a37ff;
-    `};
+    `}
 `;
 
 const Toggler = styled.div`
   font-size: 1.5rem;
-  color: black;
+  color: white;
   margin-right: 1rem;
 
   &:hover {
@@ -76,10 +77,15 @@ const Toggler = styled.div`
   }
 
   ${(props) =>
-    props.primary === "true" &&
-    css`
-      color: #4b9a37ff;
-    `};
+    props.styled === "primary"
+      ? css`
+          color: #4b9a37ff;
+        `
+      : props.styled === "secondary"
+      ? css`
+          color: white;
+        `
+      : ""}
 
   @media (min-width: 991px) {
     display: none;
@@ -88,32 +94,36 @@ const Toggler = styled.div`
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState("default");
   const toggle = () => setIsOpen(!isOpen);
 
-  const changeBackground = () => {
-    if (window.scrollY >= 50) {
-      setNavbar(true);
+  function changeBackground() {
+    if (window.scrollY >= 50 && window.scrollY < 1000) {
+      setNavbar("primary");
+      console.log("hola");
+    } else if (window.scrollY >= 1000) {
+      console.log("hola2");
+      setNavbar("secondary");
     } else {
-      setNavbar(false);
+      setNavbar("default");
     }
-  };
-  window.addEventListener("scroll", changeBackground);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
 
   return (
-    <InnerHeader
-      primary={navbar ? "true" : undefined}
-      dark
-      expand="lg"
-      fixed="top"
-    >
+    <InnerHeader styled={navbar} dark expand="lg" fixed="top">
       <Container fluid="md">
         <Link to="/" style={{ padding: "0" }} onClick={() => setIsOpen(false)}>
-          <NavbarBrand>
-            <Logo navbar={navbar} />
-          </NavbarBrand>
+          <Logo navbar={navbar} />
         </Link>
-        <Toggler onClick={toggle} primary={navbar ? "true" : undefined}>
+        <Toggler onClick={toggle} styled={navbar}>
           <FontAwesomeIcon icon={faBars} />
         </Toggler>
         <Collapse isOpen={isOpen} navbar>
@@ -123,7 +133,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/nosotros"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
-                primary={navbar ? "true" : undefined}
+                styled={navbar}
               >
                 Nosotros
               </Link>
@@ -133,7 +143,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/jugadores"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
-                primary={navbar ? "true" : undefined}
+                styled={navbar}
               >
                 Jugadores
               </Link>
@@ -143,7 +153,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/centros"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
-                primary={navbar ? "true" : undefined}
+                styled={navbar}
               >
                 Centros de Entrenamiento
               </Link>
@@ -153,7 +163,7 @@ function Header() {
                 onClick={() => setIsOpen(false)}
                 to="/cursos"
                 activeStyle={{ borderBottom: "2px solid var(--white)" }}
-                primary={navbar ? "true" : undefined}
+                styled={navbar}
               >
                 Cursos
               </Link>

@@ -9,13 +9,14 @@ const LogoContainer = styled.div`
   justify-content: space-evenly;
   position: relative;
   margin-left: 2rem;
+  height: 50px;
 
   img {
     transition: 0.3s all ease-in;
   }
 
   div {
-    color: black;
+    color: white;
     font-weight: 700;
     font-size: 0.5rem;
     transition: 0.3s all ease-in;
@@ -25,19 +26,22 @@ const LogoContainer = styled.div`
     margin-left: 0.2rem;
     padding-top: 1rem;
 
-    span {
-      ${(props) =>
-        props.primary === "true" &&
-        css`
-          color: #4b9a37ff;
-        `};
-    }
+    ${(props) =>
+      props.styled === "primary"
+        ? css`
+            color: #4b9a37ff;
+          `
+        : props.styled === "secondary"
+        ? css`
+            color: white;
+          `
+        : ""}
   }
 `;
 
 function Logo({ navbar = true }) {
   return (
-    <LogoContainer primary={navbar ? "true" : undefined}>
+    <LogoContainer styled={navbar}>
       <img src={logoSm} alt="D10" height="40px" />
       <div>
         <span style={{ fontSize: "0.6rem" }}>dediez</span>
