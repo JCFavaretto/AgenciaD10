@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { faComment } from "@fortawesome/free-solid-svg-icons";
 import BannerHome from "components/BannerHome";
 import fondo from "assets/fondos/4.jpeg";
+import ListPlayerCard from "components/ListPlayerCard";
 
 const Hero = styled.section`
   max-width: 100%;
@@ -71,6 +72,8 @@ function Home() {
         <h3 className="titulo text-center container-md">
           Algunos de nuestros representados
         </h3>
+
+        <ListPlayerCard home />
       </Section>
       <BannerHome
         icon={faComment}

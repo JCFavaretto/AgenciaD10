@@ -110,9 +110,7 @@ function Header() {
   function changeBackground() {
     if (window.scrollY >= 50 && window.scrollY < 1000) {
       setNavbar("primary");
-      console.log("hola");
     } else if (window.scrollY >= 1000) {
-      console.log("hola2");
       setNavbar("secondary");
     } else {
       setNavbar("default");
