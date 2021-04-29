@@ -40,7 +40,7 @@ function BannerHome({ icon, title, text }) {
       <div>
         <FontAwesomeIcon
           icon={icon}
-          style={{ marginBottom: "2rem", fontSize: "2rem", color: "white" }}
+          style={{ marginBottom: "2rem", fontSize: "3rem", color: "white" }}
         />
         <p>{title}</p>
         <span>{text}</span>

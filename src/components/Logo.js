@@ -39,7 +39,7 @@ const LogoContainer = styled.div`
   }
 `;
 
-function Logo({ navbar = true }) {
+function Logo({ navbar }) {
   return (
     <LogoContainer styled={navbar}>
       <img src={logoSm} alt="D10" height="40px" />

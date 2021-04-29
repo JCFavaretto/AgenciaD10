@@ -2,7 +2,7 @@ import Boton from "components/Boton";
 import React from "react";
 import styled from "styled-components";
 
-import { faComment } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faFutbol } from "@fortawesome/free-solid-svg-icons";
 import BannerHome from "components/BannerHome";
 import fondo from "assets/fondos/4.jpeg";
 import ListPlayerCard from "components/ListPlayerCard";
@@ -47,7 +47,11 @@ const HeroText = styled.div`
 const Section = styled.div`
   background-color: white;
   min-height: 100vh;
-  padding-top: 2rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 function Home() {
@@ -63,17 +67,16 @@ function Home() {
         </Shade>
       </Hero>
       <BannerHome
-        icon={faComment}
-        title="REPRESENTACIÓN PROFESIONAL"
-        text=" Estamos especializados en la representación de deportistas
-          profesionales."
+        icon={faFutbol}
+        title="¿Qué es D10 - Integración deportiva?"
+        text="Es una Asociación civil destinada a la formación, entrenamiento y perfeccionamiento deportivo del área Infantil, Juvenil, Libres y/o selectivo."
       />
       <Section>
         <h3 className="titulo text-center container-md">
           Algunos de nuestros representados
         </h3>
-
         <ListPlayerCard home />
+        <Boton nav path="/jugadores" texto="Ver todos los jugadores" />
       </Section>
       <BannerHome
         icon={faComment}

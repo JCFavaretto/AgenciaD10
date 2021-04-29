@@ -37,8 +37,8 @@ function CollapseItems({ items, title, open = false }) {
       <Row xs="1" md="2" lg="2" xl="3">
         {items.map((img) => {
           return (
-            <Collapse isOpen={isOpen}>
-              <Col key={img.alt}>
+            <Collapse key={img.alt} isOpen={isOpen}>
+              <Col>
                 <FlipCard img={img} />
               </Col>
             </Collapse>

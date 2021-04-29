@@ -51,7 +51,7 @@ const NavMenu = ({ logo2, active, toggle }) => {
       <ul>
         <li>
           <NavLink to="/">
-            <Logo />
+            <Logo navbar="primary" />
           </NavLink>
         </li>
         <li>
