@@ -57,14 +57,24 @@ const Link = styled(NavLink)`
   transition: 0.3s all ease-out;
 
   &:hover {
-    color: var(--dark);
+    color: #4b9a37ff;
   }
 
   ${(props) =>
-    props.styled === "primary" &&
-    css`
-      color: #4b9a37ff;
-    `}
+    props.styled === "primary"
+      ? css`
+          color: #4b9a37ff;
+
+          &:hover {
+            color: black;
+          }
+        `
+      : props.styled === "secondary" &&
+        css`
+          &:hover {
+            color: black;
+          }
+        `}
 `;
 
 const Toggler = styled.div`
